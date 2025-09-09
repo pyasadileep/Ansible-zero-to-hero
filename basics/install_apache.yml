@@ -1,0 +1,20 @@
+---
+- name: Install Apache on Ubuntu
+  hosts: localhost
+  become: yes
+  connection: local
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Ensure Apache is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes
