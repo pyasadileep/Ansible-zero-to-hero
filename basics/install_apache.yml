@@ -1,0 +1,19 @@
+---
+
+- name: install nginx
+  hosts: localhost
+  become: yes
+  connection: local
+  vars:
+   pkg: nginx
+  tasks:
+   - name: install {{pkg}}
+     apt:
+      name: "{{pkg}}"
+      state: present
+      
+   - name: start service
+     service:
+      name: "{{pkg}}"
+      state: started
+      enabled: yes
