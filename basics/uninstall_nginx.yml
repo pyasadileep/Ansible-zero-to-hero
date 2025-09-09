@@ -1,0 +1,22 @@
+---
+
+- name: nginx un-installation
+  hosts: localhost
+  become: true
+  connection: local
+  tasks:
+  - name: stop nginx
+    service: 
+     name: nginx
+     state: stopped
+     enabled: no
+
+  - name: uninstall nginx
+    apt:
+     name: nginx
+     state: absent
+     purge: yes
+
+  - name: clean up
+    apt:
+     autoremove: yes
