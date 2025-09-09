@@ -1,0 +1,12 @@
+---
+- name: Create DevOps user
+  hosts: localhost
+  become: true
+  connection: local
+  tasks:
+    - name: Add devops user
+      user:
+        name: test-user
+        shell: /bin/bash
+        state: present
+        groups: sudo
