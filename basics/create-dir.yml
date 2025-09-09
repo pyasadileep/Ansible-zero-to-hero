@@ -1,0 +1,19 @@
+---
+ - hosts: localhost
+   become: true
+   connection: local
+   vars: 
+     loc: /home/dileeppyasa/Desktop
+   tasks:
+     - name: create a directory
+       file: 
+         path=/home/dileeppyasa/Desktop/test-dir state=directory mode=700 owner=dileeppyasa group=root
+     - name: create a file in directory
+       file:
+         path=/home/dileeppyasa/Desktop/test-dir/new-file.txt state=touch  
+
+     - name: crete content in file
+       copy:
+         dest: /home/dileeppyasa/Desktop/test-dir/newfile.txt
+         content: |
+           Hello, this file created by dileep for ansible test purpose.
