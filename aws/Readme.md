@@ -1,3 +1,12 @@
+# 🚀 Launch AWS EC2 Instance with Ansible
+
+This Ansible playbook launches an EC2 instance in AWS with a public IP address using the `amazon.aws.ec2_instance` module. It's a minimal setup suitable for development, testing, or learning how to automate cloud infrastructure with Ansible.
+
+---
+
+## 📄 Playbook: `aws-instance.yml
+
+
 ✅ Requirements
 
 Ansible >=2.10
