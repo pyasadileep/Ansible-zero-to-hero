@@ -9,14 +9,14 @@ This repository contains Ansible playbooks demonstrating my proficiency from beg
 
 ## Usage
 
-## 1. Clone the repository:
+### 1. Clone the repository:
 ```bash
 git clone https://github.com/<username>/ansible-playbooks-portfolio.git
 cd ansible-playbooks-portfolio
 
+### 2.Run a playbook:
 
-## Run a playbook:
-
+```bash
 ansible-playbook -i inventory.ini basics/install_apache.yml
 
 
@@ -25,7 +25,7 @@ Customize inventory and variables as needed.
 
 ---
 
-## **2. Inventory File: `inventory.ini`**
+### **2. Inventory File: `inventory.ini`**
 
 ```ini
 [webservers]
