@@ -13,34 +13,36 @@ Ansible >=2.10
 
 amazon.aws collection
 Install with:
-
+```bash
 ansible-galaxy collection install amazon.aws
 
 
 AWS Credentials:
 Store your credentials securely using Ansible Vault or environment variables.
-
+```bash
 export EC2_ACCESS_KEY=your_access_key
 export EC2_SECRET_KEY=your_secret_key
 
 🔐 Using Ansible Vault (Recommended)
 
 You can encrypt your AWS credentials with Ansible Vault:
-
+```bash
 ansible-vault create group_vars/all/vault.yml
 
 
 Inside vault.yml:
-
+```bash
 ec2_access_key: YOUR_ACCESS_KEY
 ec2_secret_key: YOUR_SECRET_KEY
 
 
 Run the playbook with vault password:
-
+```bash
 ansible-playbook aws-instance.yml --ask-vault-pass
 
 📍 Notes
+
+Make sure you have created user and assigned EC2 necessary permissions for above playbook to work.
 
 Make sure your default VPC and security group exist in the selected region.
 
