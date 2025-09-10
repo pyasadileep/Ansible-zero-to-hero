@@ -1,0 +1,19 @@
+---
+- name: create multiple installations
+  hosts: localhost
+  become: true
+  connection: local
+
+  vars:
+    apps:
+      - tree
+      - git
+      - maven
+
+  tasks:
+    - name: install required applications
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ apps }}"
+
