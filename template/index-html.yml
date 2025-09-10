@@ -1,0 +1,24 @@
+---
+- name: Deploy Nginx web server
+  hosts: localhost
+  become: yes
+  connection: local
+  vars:
+    app_port: 8080
+
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Configure Nginx with template
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
