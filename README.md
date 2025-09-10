@@ -9,13 +9,13 @@ This repository contains Ansible playbooks demonstrating my proficiency from beg
 
 ## Usage
 
-1. Clone the repository:
+## 1. Clone the repository:
 ```bash
 git clone https://github.com/<username>/ansible-playbooks-portfolio.git
 cd ansible-playbooks-portfolio
 
 
-Run a playbook:
+## Run a playbook:
 
 ansible-playbook -i inventory.ini basics/install_apache.yml
 
